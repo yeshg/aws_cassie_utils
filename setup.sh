@@ -26,6 +26,9 @@ pip install matplotlib
 git clone https://github.com/p-morais/cassie-mujoco-sim.git
 wget https://www.roboti.us/download/mjpro150_linux.zip
 
+# Unzip mjpro150
+unzip mjpro150_linux.zip
+
 # Build cassie-mujoco-sim
 mv mjpro150/ cassie-mujoco-sim/.
 mv mjkey.txt cassie-mujoco-sim/.
