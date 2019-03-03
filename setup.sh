@@ -7,8 +7,12 @@ select yn in "Yes" "No"; do
     esac
 done
 
+# Go to home
+cd
+
 # Requirements
 sudo apt-get install libglfw3-dev make build-essential python3-pip
+sudo apt install unzip
 
 # Python Env Setup
 wget https://repo.continuum.io/archive/Anaconda3-5.3.1-Linux-x86_64.sh
@@ -44,11 +48,7 @@ git clone https://github.com/p-morais/cassie-rl.git
 
 # Setup cassie-rl with stuff from cassie-mujoco-sim
 cp cassie-mujoco-sim/mjkey.txt cassie-rl/cassie/cassiemujoco/.
-cp ~/cassie-mujoco-sim/libcassiemujoco.so cassiemujoco/.
+cp ~/cassie-mujoco-sim/libcassiemujoco.so cassie-rl/cassie/cassiemujoco/.
 
 # Done
 echo "Done Setting Up"
-
-
-
-
