@@ -14,6 +14,10 @@ cd
 sudo apt-get install libglfw3-dev make build-essential python3-pip
 sudo apt install unzip
 
+# For visdom
+sudo apt-get install luarocks
+
+
 # Python Env Setup
 wget https://repo.continuum.io/archive/Anaconda3-5.3.1-Linux-x86_64.sh
 bash Anaconda3-5.3.1-Linux-x86_64.sh
@@ -25,6 +29,8 @@ conda install numpy
 conda install pytorch-cpu torchvision-cpu -c pytorch
 pip install gym
 pip install matplotlib
+pip install visdom
+luarocks install visdom
 
 # Get cassie-mujoco-sim and mujoco150
 git clone https://github.com/p-morais/cassie-mujoco-sim.git
