@@ -10,6 +10,9 @@ done
 # Go to home
 cd
 
+# Make sure apt-get works
+sudo apt-get update
+
 # Requirements
 sudo apt-get install libglfw3-dev make build-essential python3-pip
 sudo apt install unzip
@@ -56,5 +59,12 @@ git clone https://github.com/p-morais/cassie-rl.git
 cp cassie-mujoco-sim/mjkey.txt cassie-rl/cassie/cassiemujoco/.
 cp ~/cassie-mujoco-sim/libcassiemujoco.so cassie-rl/cassie/cassiemujoco/.
 
+# Setup deep-rl
+cd
+cd deep-rl
+python setup.py build
+python setup.py install
+
 # Done
+cd
 echo "Done Setting Up"
