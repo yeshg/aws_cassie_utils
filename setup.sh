@@ -33,7 +33,7 @@ conda install pytorch-cpu torchvision-cpu -c pytorch
 pip install gym
 pip install matplotlib
 pip install visdom
-luarocks install visdom
+# luarocks install visdom
 
 # Get cassie-mujoco-sim and mujoco150
 git clone https://github.com/p-morais/cassie-mujoco-sim.git
@@ -57,7 +57,13 @@ git clone https://github.com/p-morais/cassie-rl.git
 
 # Setup cassie-rl with stuff from cassie-mujoco-sim
 cp cassie-mujoco-sim/mjkey.txt cassie-rl/cassie/cassiemujoco/.
+cp -a cassie-mujoco-sim/mjpro150/ cassie-rl/cassie/cassiemujoco/.
 cp ~/cassie-mujoco-sim/libcassiemujoco.so cassie-rl/cassie/cassiemujoco/.
+
+
+# finish setting up cassie-rl
+cd cassie-rl
+pip install -e .
 
 # Setup deep-rl
 cd
