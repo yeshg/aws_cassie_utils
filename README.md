@@ -1,8 +1,6 @@
-# aws_cassie_utils
+# This is for your local machine
 
-Clone this repo in the home directory of the instance. Then run setup.sh
-
-To interface with the instance through a jupyter notebook, run launch_notebook.sh and run the following command from local system:
+Command to interface with instance through jupyter notebook after running launch_notebook.sh from server branch:
 
 ```
 ssh -i <private-key-of-instance>.pem -L 8000:localhost:8888 ubuntu@<public-ip-of-instance>
