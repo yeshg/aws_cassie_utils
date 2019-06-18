@@ -22,4 +22,4 @@ To connect to the visdom server on the instance, first launch the visdom server 
 python -m visdom.server
 ```
 
-Then, go to http://&ltip-address-of-server&gt:8097
+Then, go to http://[ip-address-of-server]:8097
