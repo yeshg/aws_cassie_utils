@@ -32,3 +32,5 @@ ssh -L 6006:localhost:6006 <*something*>
 In other terminal, launch job itself. Go to localhost:6006 in browser.
 
 Note that 6006 is not the default port for PyTorch.
+
+Ref: https://forums.intel.com/s/feed/0D50P00004FQtrfSAD?language=en_US
