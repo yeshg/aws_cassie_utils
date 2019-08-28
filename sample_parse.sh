@@ -8,15 +8,13 @@ echo "upper bound>"
 read upper
 
 
-sudo cp /home/drl/rohanp/out.txt /home/drl/rohanp/parse_out.txt
+sudo cp /home/rohan/Downloads/out.txt /home/rohan/Downloads/parse_out.txt
 
 #echo `cat /home/drl/rohanp/out.txt`
 for i in {-n lower..-n upper}
 do
-cat /home/drl/rohanp/parse_out.txt | grep exec_host
-echo= sudo cat /home/drl/rohanp/parse_out.txt | awk -v FS="(<exec_host>|</exec_host>)" '{print $2}'
-sed "g<exec_hos>t.*/<exec_host> /g" /home/drl/rohanp/parse_out.txt
+cat /home/rohan/Downloads/parse_out.txt | grep exec_host
+echo= sudo cat /home/rohan/Downloads/parse_out.txt | awk -v FS="(<exec_host>|</exec_host>)" '{print $2}'
+sudo sed -i "/<exec_host>/,/exec_host>:/d" /home/rohan/Downloads/parse_out.txt
 done
-
-
 
