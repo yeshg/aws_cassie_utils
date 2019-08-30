@@ -1,24 +1,35 @@
 #!/bin/bash
-#echo "what is the file name>"
-#read FILENAME
 
+#Ask the user for the file name
+echo "what is the file name> (include the full file path)"
+read FILENAME
+
+#ask the user for the lower bound
 echo "lower bound>"
 read lower
+
+#ask the user for the upper bound
 echo "upper bound>"
 read upper
 
 
-sudo cp /home/rohan/Downloads/out.txt /home/rohan/Downloads/parse_out.txt
 
-#echo `cat /home/drl/rohanp/out.txt`
-#for i in {-n lower..-n upper}
-#do
-#cat /home/rohan/Downloads/parse_out.txt | grep exec_host
-echo= sudo cat /home/rohan/Downloads/parse_out.txt | awk -v FS="(<exec_host>|</exec_host>)" '{print $2}'
-sed 's/exec_host/nothing/' /home/rohan/Downloads/parse_out.txt
-echo= sudo cat /home/rohan/Downloads/parse_out.txt | awk -v FS="(<exec_host>|</exec_host>)" '{print $2}'
-sed 's/exec_host/nothing/' /home/rohan/Downloads/parse_out.txt
+#For loop - each iteration prints a new host id to the termianl
+for i in {-n lower..-n upper}
+do
 
-#sed -n 's/</exec_host>/nothing/' /home/rohan/Downloads/parse_out.txt
-#done
+	# print the value between the two tags
+	JOB= sudo cat $FILENAME | awk -v FS="(<exec_host>|</exec_host>)" '{print $2}'
+
+	echo $JOB
+
+	# replace the first tag with nothing
+	sudo sed -i  's/<exec_host>//' $FILENAME
+
+	# replace the second tag with nothing
+	sudo sed -i 's/exec_host>//' $FILENAME
+
+
+#END For loop
+done
 
